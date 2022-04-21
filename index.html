@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRABALHO 2</title>
+
+  <link rel="stylesheet" type="text/css" href="style4.css">
+
+
+
+</head>
+
+<body>
+
+  <form class="form" method="post" action="  ">
+    <!-- method="post" action="paginadestino.html" -->
+
+    <table class="input-group">
+      <tr>
+        <td colspan="2" id="titulo">
+          <h1>Cadastro De Alunos</h1>
+        </td>
+      </tr>
+
+      <!-- Colocar campo identificador(Campo oculto) -->
+
+      <tr>
+        <td>
+          <input type="hidden" id="identificador">
+        </td>
+      </tr>
+      <tr>
+
+        <!-- CAMPO DE Matricula -->
+
+        <td>Matricula: </td>
+
+        <td> <input type="number" required name="matricula" id="matricula" placeholder="Informe sua matrícula"
+            onchange="validaMatricula()">
+          <p id="matricula-msg"></p>
+        </td>
+
+      </tr>
+      <!-- NOME COMPLETO  -->
+      <tr>
+        <td>Nome de Usuário: </td>
+        <!-- " SIZE=15 maxlength="5" />  </td> -->
+        <td><input type="text" name="nome" id="nome-usuario" class="tam" required placeholder="Informe seu nome"
+            onchange="validarNome()">
+          <p id="nome-msg"></p>
+        </td>
+
+      </tr>
+
+      <!-- CAMPO DO SEXO COM RADIO -->
+      <TR>
+        <td>Sexo: </td>
+        <td>
+          <select required name="Sexo: " id="sexo" class="selecao">
+
+            <option value="sel" disabled selected>Selecione o sexo</option>
+            <OPTION VALUE="masc">Masculino</OPTION>
+            <OPTION VALUE="femi">Feminino</OPTION>
+
+          </select>
+
+        </td>
+
+        <!-- Campo de DATA DE NASCIMENTO -->
+
+      <tr>
+        <td> Data De Nascimento: </td>
+
+        <td> <input type="date" id="dataNas" required placeholder="DD/MM/YYYY" onchange="verificarData()">
+          <p id="data-msg"></p>
+        </td>
+
+      </tr>
+
+      <TR >
+        <TD required >Curso: </TD>
+        <TD>
+          <select name="Curso: " id="Curso" class="selecao" >
+            <option value="sel"disabled selected>Selecione o curso</option>
+            <OPTION VALUE="cp">Ciência da Computação</OPTION>
+            <OPTION VALUE="engC">Engenharia de Computação</OPTION>
+            <OPTION VALUE="ads">Análise e Desenvolvimento de Software</OPTION>
+
+
+          </select>
+          <br></br>
+
+        </TD>
+      </TR>
+
+      <TR > 
+
+        <TD >Nao Cursaria: </TD>
+        <TD>
+          <select multiple name="Curso: " id="Não cursaria" class="selecao" onchange="validarCurso()">
+
+            <option value="sel"disabled selected>Selecione o curso</option>
+            <OPTION name="notCurso" VALUE="cp">Ciência da Computação</OPTION>
+            <OPTION name="notCurso" VALUE="engC">Engenharia de Computação</OPTION>
+            <OPTION name="notCurso" VALUE="ads">Análise e Desenvolvimento de Software</OPTION>
+            <option name="notCurso" VALUE="let">Letras</OPTION>
+            <option name="notCurso" VALUE="fisi">Fisica</OPTION>
+            <option name="notCurso" VALUE="his">Historia</OPTION>
+
+          </select>
+        </TD>
+      </TR>   
+
+
+      <tr>
+        <td>Email: </td>
+
+
+       <!-- <input type="email" id="e-mail" class="email" placeholder="E-mail" required onchange="validarEmail()">        
+         -->
+        <td> <input type="email" required id="e-mail" placeholder="E-mail" class="tam" onchange="validarEmail()" size="100">
+          <p id="email-msg"></p>
+        </td>
+
+
+      </tr>
+
+
+      <TR>
+        <td>Receba Notificação: </td>
+        <td>
+          Sim : <input type="radio" name="Notificações: " value="Sim">
+
+
+          Não : <input type="radio" name="Notificações: " value="não">
+
+
+        </td>
+
+
+      <TR>
+        <TD>Senha: </TD>
+        <TD>
+          <input required type="password" id="senha1" class="senha1" placeholder="Senha" />
+          <p id="senha1-msg"></p>
+        </TD>
+
+      </TR>
+
+      <TR>
+        <TD>Confirme a Senha: </TD>
+        <TD>
+          <input  required type="password" id="senha2" class="senha2" placeholder="Confirmar Senha"  onchange="validarSenha()"/>
+          <p id="senha2-msg"></p>
+        </TD>
+
+      </TR>
+
+      <TR>
+        <TD>Motivação do Curso: </TD>
+        <TD>
+          <textarea name="" id="" cols="30" rows="4" placeholder="Motivação do curso "></textarea>
+        </TD>
+      </TR>
+      <tr>
+
+
+        <td colspan="2"> <button onclick="verificarData(),validarEmail(), validarSenha(), validaMatricula(),
+          validarCurso()">Validar</button></td>
+      </tr>
+
+
+
+    </TABLE>
+
+  </form>
+
+  <script src="script2.js"></script>
+
+
+
+</body>
+
+</html>
